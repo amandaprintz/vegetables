@@ -8,17 +8,13 @@ const HeaderContainer = styled.div`
   background-image: url(${logo});
   background-repeat: no-repeat;
   background-position: center;
-  padding-top: 70px;
-
-  h1 {
-    text-align: center;
-    color: #fafaee;
-    margin: 0px;
-    padding: 5rem;
-    font-family: "NotoSerifBold";
-    font-weight: bold;
-    font-size: 4rem;
-  }
+ width: 100%;
+  
+ 
+ @media (min-width: 1200px) {
+  padding-top: 40px;
+ }
+  
 `;
 
 const ButtonContainer = styled.div`

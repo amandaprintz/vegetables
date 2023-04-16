@@ -3,3 +3,14 @@
   src: local("NotoSerifBold"), local("NotoSerifbold"),
     url("../assets/fonts/NotoSerif-Bold.ttf") format("ttf");
 }
+
+
+h1 {
+  text-align: center;
+  color: #fafaee;
+  margin: 0px;
+  padding: 5rem;
+  font-family: "NotoSerifBold";
+  font-weight: bold;
+  font-size: 4rem;
+}

@@ -12,13 +12,31 @@ import image9 from "../../assets/images/image9.jpg"
 import image10 from "../../assets/images/image10.jpg"
 
 
-
-
 const GridContainer = styled.div`
-  background-color: #9fbb99;
+
+  margin-top: 35px;
+  padding: 20px 20px;
+  grid-template-columns: 1fr;
+  object-fit: cover;
+
+
+@media (min-width: 820px) {
+background-color: #ffffff;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
   grid-gap: 16px;
+  padding: 10px 50px;
+  margin-top: 60px;
+  gap: 40px;
+}
+
+@media (min-width: 1200px) {
+  padding: 20px 200px;
+
+}
+
+
 
 `;
 
@@ -45,13 +63,6 @@ const Grid = () => {
       <GridItem src={image8} alt="Image 8" /> 
       <GridItem src={image9} alt="Image 9" /> 
       <GridItem src={image10} alt="Image 10" /> 
-
-
-
-
-
-
-      
     </GridContainer>
   );
 };

@@ -1,6 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
+const ButtonContainer = styled.button`
+display:flex;
+justify-content: center;
+border:none;
+background-color: transparent;
+`;
+
 const Btn = styled.button`
   padding: 8px 16px;
   background-color: #f38c29;
@@ -12,6 +19,11 @@ const Btn = styled.button`
   border-radius: 50px;
   margin: 10px;
 
+
+@media (min-width: 820px) {
+  padding: 20px;
+
+  }
 
 `;
 
@@ -26,10 +38,10 @@ const Button = () => {
   };
 
   return (
-    <div>
+    <ButtonContainer>
       <Btn onClick={handleShowAllVeggies}>Show all the good Veggies</Btn>
       <Btn onClick={handleFavorites}>Only show my favorite veggies</Btn>
-    </div>
+    </ButtonContainer>
   );
 };
 
