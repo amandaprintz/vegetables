@@ -34,7 +34,6 @@ const Header = () => {
       <h1>My favorite veggies</h1>
       <ButtonContainer>
         <Button></Button>
-        <Button></Button>
       </ButtonContainer>
     </HeaderContainer>
   );
