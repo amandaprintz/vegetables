@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const ButtonContainer = styled.button`
-display:flex;
-justify-content: center;
-border:none;
-background-color: transparent;
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
 `;
 
 const Btn = styled.button`
@@ -19,16 +19,12 @@ const Btn = styled.button`
   border-radius: 50px;
   margin: 10px;
 
-
-@media (min-width: 820px) {
-  padding: 20px;
-
+  @media (min-width: 820px) {
+    padding: 20px;
   }
-
 `;
 
 const Button = () => {
-
   const handleShowAllVeggies = () => {
     window.location.href = "/show-all-veggies";
   };

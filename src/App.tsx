@@ -1,13 +1,16 @@
 import React from "react";
 import Header from "./components/Header";
-import Grid from "./components/Grid"
+import Grid from "./components/Grid";
+import { FavoritesProvider } from "./AppContext";
 
 function App() {
   return (
-    <main className="App">
-      <Header />
-      <Grid />
-    </main>
+    <FavoritesProvider>
+      <main className="App">
+        <Header />
+        <Grid />
+      </main>
+    </FavoritesProvider>
   );
 }
 
