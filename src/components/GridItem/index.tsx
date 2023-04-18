@@ -1,10 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import styled from "styled-components";
 import { FavoritesContext } from "../../AppContext";
 
 export type GridItemProps = {
   img: string;
-  alt: string;
+  alt?: string;
   size?: string;
   id: number;
   favorite?: boolean;
@@ -36,18 +36,23 @@ const LikeButton = styled.button`
   cursor: pointer;
 `;
 
-const GridItem: React.FC<GridItemProps> = ({ img, alt, size, favorite }) => {
-  const [liked, setLiked] = useState(false);
-
-  const toggleLike = () => {
-    setLiked(!liked);
+const GridItem: React.FC<GridItemProps> = ({
+  img,
+  alt,
+  size,
+  favorite,
+  id,
+}) => {
+  const { toggleFavorite } = useContext(FavoritesContext);
+  const toggleItemFavorite = () => {
+    toggleFavorite(id);
   };
 
   return (
     <Item className={size}>
       <img src={img} alt={alt} />
-      <LikeButton onClick={toggleLike}>
-        {liked ? (
+      <LikeButton onClick={toggleItemFavorite}>
+        {favorite ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

@@ -37,6 +37,7 @@ const Grid = () => {
           alt={item.alt}
           key={item.id}
           id={item.id}
+          favorite={item.favorite}
         ></GridItem>
       ))}
       ;

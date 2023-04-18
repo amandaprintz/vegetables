@@ -9,57 +9,60 @@ import image7 from "./assets/images/image7.jpg";
 import image8 from "./assets/images/image8.jpg";
 import image9 from "./assets/images/image9.jpg";
 import image10 from "./assets/images/image10.jpg";
+import { GridItemProps } from "./components/GridItem";
 
 const cards = [
   {
     id: 1,
     img: image1,
-    favourite: false,
+    favorite: false,
   },
   {
     id: 2,
     img: image2,
-    favourite: false,
+    favorite: false,
   },
   {
     id: 3,
     img: image3,
-    favourite: false,
+    favorite: false,
   },
   {
     id: 4,
     img: image4,
-    favourite: false,
+    favorite: false,
+    size: "large",
   },
   {
     id: 5,
     img: image5,
-    favourite: false,
+    favorite: false,
   },
   {
     id: 6,
     img: image6,
-    favourite: false,
+    favorite: false,
   },
   {
     id: 7,
     img: image7,
-    favourite: false,
+    favorite: false,
+    size: "large",
   },
   {
     id: 8,
     img: image8,
-    favourite: false,
+    favorite: false,
   },
   {
     id: 9,
     img: image9,
-    favourite: false,
+    favorite: false,
   },
   {
     id: 10,
     img: image10,
-    favourite: false,
+    favorite: false,
   },
 ];
 
@@ -69,18 +72,44 @@ export const FavoritesContext = createContext<any>(null);
 // Skapa en Provider-komponent för Context
 export const FavoritesProvider: React.FC<any> = ({ children }) => {
   const [favorites, setFavorites] = useState<number[]>([]); // Använd state för att spåra favoriter
+  const [updatedCards, setUpdatedCards] = useState<GridItemProps[]>(cards); // State för uppdaterade kort
+
+  const [filterFavorites, setFilterFavorites] = useState<boolean>(false);
 
   // Funktion för att lägga till/ta bort favoritmarkering på ett item
   const toggleFavorite = (itemId: number) => {
-    if (favorites.includes(itemId)) {
-      setFavorites(favorites.filter((id) => id !== itemId));
-    } else {
-      setFavorites([...favorites, itemId]);
-    }
+    setFavorites((prevFavorites) => {
+      const updatedFavorites = [...prevFavorites]; // Kopiera favorites-arrayen
+
+      // Loopa igenom varje kort och ändra favorite-värdet för det aktuella kortet baserat på dess id
+      const updatedCardsCopy = updatedCards.map((card) => {
+        if (card.id === itemId) {
+          return { ...card, favorite: !card.favorite }; // Kopiera kortet och ändra favorite-värdet
+        }
+        return card;
+      });
+
+      setUpdatedCards(updatedCardsCopy); // Uppdatera state för uppdaterade korten
+
+      // Lägg till eller ta bort itemId från favorites-arrayen beroende på om det redan finns där eller inte
+      if (updatedFavorites.includes(itemId)) {
+        return updatedFavorites.filter((id) => id !== itemId);
+      } else {
+        return [...updatedFavorites, itemId];
+      }
+    });
   };
 
   return (
-    <FavoritesContext.Provider value={{ favorites, toggleFavorite, cards }}>
+    <FavoritesContext.Provider
+      value={{
+        filterFavorites,
+        setFilterFavorites,
+        favorites,
+        toggleFavorite,
+        cards: updatedCards,
+      }}
+    >
       {children}
     </FavoritesContext.Provider>
   );
