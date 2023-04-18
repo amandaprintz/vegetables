@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
 import styled from "styled-components";
+import { FavoritesContext } from "../../AppContext";
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -25,18 +26,16 @@ const Btn = styled.button`
 `;
 
 const Button = () => {
-  const handleShowAllVeggies = () => {
-    window.location.href = "/show-all-veggies";
-  };
-
-  const handleFavorites = () => {
-    window.location.href = "/favorites";
-  };
+  const { setFilterFavorites } = useContext(FavoritesContext);
 
   return (
     <ButtonContainer>
-      <Btn onClick={handleShowAllVeggies}>Show all the good Veggies</Btn>
-      <Btn onClick={handleFavorites}>Only show my favorite veggies</Btn>
+      <Btn onClick={() => setFilterFavorites(false)}>
+        Show all the good Veggies
+      </Btn>
+      <Btn onClick={() => setFilterFavorites(true)}>
+        Only show my favorite veggies
+      </Btn>
     </ButtonContainer>
   );
 };

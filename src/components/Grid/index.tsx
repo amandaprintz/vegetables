@@ -26,11 +26,15 @@ const GridContainer = styled.div`
 `;
 
 const Grid = () => {
-  const { cards } = useContext(FavoritesContext);
+  const { filterFavorites, cards } = useContext(FavoritesContext);
+
+  const filteredCards = filterFavorites
+    ? cards.filter((card: any) => card.favorite)
+    : cards;
 
   return (
     <GridContainer>
-      {cards.map((item: GridItemProps) => (
+      {filteredCards.map((item: GridItemProps) => (
         <GridItem
           img={item.img}
           size={item.size}

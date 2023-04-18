@@ -10,10 +10,6 @@ export type GridItemProps = {
   favorite?: boolean;
 };
 
-/* export interface IGridItem {
-  item: GridItemProps;
-} */
-
 const Item = styled.div`
   grid-column: span 1;
   width: 100%;
