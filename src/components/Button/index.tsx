@@ -11,8 +11,8 @@ const ButtonContainer = styled.div`
 
 const Btn = styled.button`
   padding: 8px 16px;
-  background-color: #f38c29;
-  color: #ffffff;
+  background-color: #f5d37d;
+  color: #000000;
   font-weight: bold;
   border: none;
   cursor: pointer;
@@ -23,17 +23,35 @@ const Btn = styled.button`
   @media (min-width: 820px) {
     padding: 20px;
   }
+
+  &.active {
+    background-color: #f38c29;
+    color: #ffffff;
+    text-decoration: underline;
+  }
 `;
 
 const Button = () => {
-  const { setFilterFavorites } = useContext(FavoritesContext);
+  const { filterFavorites, setFilterFavorites } = useContext(FavoritesContext);
+
+  const handleClick = (index: number) => {
+    setFilterFavorites(index === 1);
+  };
 
   return (
     <ButtonContainer>
-      <Btn onClick={() => setFilterFavorites(false)}>
+      <Btn
+        className={!filterFavorites ? "active" : ""}
+        style={{}}
+        onClick={() => handleClick(0)}
+      >
         Show all the good Veggies
       </Btn>
-      <Btn onClick={() => setFilterFavorites(true)}>
+      <Btn
+        className={filterFavorites ? "active" : ""}
+        style={{}}
+        onClick={() => handleClick(1)}
+      >
         Only show my favorite veggies
       </Btn>
     </ButtonContainer>

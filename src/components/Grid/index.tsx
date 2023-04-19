@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import GridItem, { GridItemProps } from "../GridItem";
 import { FavoritesContext } from "./../../AppContext";
@@ -42,6 +42,8 @@ const Grid = () => {
           key={item.id}
           id={item.id}
           favorite={item.favorite}
+          name={item.name}
+          description={item.description}
         ></GridItem>
       ))}
       ;

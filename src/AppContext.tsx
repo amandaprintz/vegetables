@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import image1 from "./assets/images/image1.jpg";
 import image2 from "./assets/images/image2.jpg";
 import image3 from "./assets/images/image3.jpg";
@@ -16,6 +16,8 @@ const cards = [
     id: 1,
     img: image1,
     favorite: false,
+    name: "en grönsak",
+    description: "this is a veggie",
   },
   {
     id: 2,
@@ -66,13 +68,19 @@ const cards = [
   },
 ];
 
+function getInitialState() {
+  const savedCards = localStorage.getItem("cards");
+  return savedCards ? JSON.parse(savedCards) : cards;
+}
+
 // Skapa en ny Context
 export const FavoritesContext = createContext<any>(null);
 
 // Skapa en Provider-komponent för Context
 export const FavoritesProvider: React.FC<any> = ({ children }) => {
   const [favorites, setFavorites] = useState<number[]>([]); // Använd state för att spåra favoriter
-  const [updatedCards, setUpdatedCards] = useState<GridItemProps[]>(cards); // State för uppdaterade kort
+  const [updatedCards, setUpdatedCards] =
+    useState<GridItemProps[]>(getInitialState); // State för uppdaterade kort
 
   const [filterFavorites, setFilterFavorites] = useState<boolean>(false);
 
@@ -99,6 +107,10 @@ export const FavoritesProvider: React.FC<any> = ({ children }) => {
       }
     });
   };
+
+  useEffect(() => {
+    localStorage.setItem("cards", JSON.stringify(updatedCards));
+  }, [updatedCards]);
 
   return (
     <FavoritesContext.Provider

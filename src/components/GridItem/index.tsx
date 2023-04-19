@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { FavoritesContext } from "../../AppContext";
 
@@ -6,6 +6,8 @@ export type GridItemProps = {
   img: string;
   alt?: string;
   size?: string;
+  name?: string;
+  description?: string;
   id: number;
   favorite?: boolean;
 };
@@ -35,6 +37,8 @@ const LikeButton = styled.button`
 const GridItem: React.FC<GridItemProps> = ({
   img,
   alt,
+  name,
+  description,
   size,
   favorite,
   id,
@@ -74,6 +78,8 @@ const GridItem: React.FC<GridItemProps> = ({
           </svg>
         )}
       </LikeButton>
+      <h3>{name}</h3>
+      <p>{description}</p>
     </Item>
   );
 };

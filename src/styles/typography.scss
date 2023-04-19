@@ -4,7 +4,6 @@
     url("../assets/fonts/NotoSerif-Bold.ttf") format("ttf");
 }
 
-
 h1 {
   text-align: center;
   color: #fafaee;
@@ -13,4 +12,24 @@ h1 {
   font-family: "NotoSerifBold";
   font-weight: bold;
   font-size: 4rem;
+}
+
+h3 {
+  position: absolute;
+  color: #fafaee;
+  bottom: 30px;
+  left: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+p {
+  position: absolute;
+  color: #fafaee;
+  bottom: 10px;
+  font-weight: light;
+  left: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
