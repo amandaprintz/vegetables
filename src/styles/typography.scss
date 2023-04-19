@@ -4,6 +4,12 @@
     url("../assets/fonts/NotoSerif-Bold.ttf") format("ttf");
 }
 
+@font-face {
+  font-family: "Rubik-Bold";
+  src: local("Rubik-Bold"), local("Rubik-Bold"),
+    url("../assets/fonts/Rubik-Bold.ttf") format("ttf");
+}
+
 h1 {
   text-align: center;
   color: #fafaee;
@@ -15,12 +21,13 @@ h1 {
 }
 
 h3 {
+  font-family: "RubikBold";
+  font-weight: bold;
   position: absolute;
   color: #fafaee;
   bottom: 30px;
   left: 20px;
   background: transparent;
-  border: none;
   cursor: pointer;
 }
 p {
