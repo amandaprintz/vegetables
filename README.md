@@ -1,6 +1,7 @@
-# Veggies
+# Kim, Chill it's only salad 
+<img src="https://media.giphy.com/media/x0CGDWj2fJhpFJpz4W/giphy.gif" width=100%>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Just listing a lil veggie collage. 
 
 ## Available Scripts
 
