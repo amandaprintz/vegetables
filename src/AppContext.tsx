@@ -60,21 +60,29 @@ const cards = [
     img: image7,
     favorite: false,
     size: "large",
+    name: " The magic radish",
+    description: "a punch of flavor to any dish.",
   },
   {
     id: 8,
     img: image8,
     favorite: false,
+    name: " The vibrant persimmon",
+    description: "A sweet burst of sunshine ",
   },
   {
     id: 9,
     img: image9,
     favorite: false,
+    name: " The mighty brussels sprouts",
+    description: " Small veg, big flavor",
   },
   {
     id: 10,
     img: image10,
     favorite: false,
+    name: " The green veggies",
+    description: "Ready to save your health.",
   },
 ];
 

@@ -21,7 +21,11 @@ const GridContainer = styled.div`
   }
 
   @media (min-width: 1200px) {
-    padding: 20px 700px;
+    padding: 20px 300px;
+  }
+
+  @media (min-width: 2000px) {
+    padding: 20px 800px;
   }
 `;
 
@@ -46,7 +50,6 @@ const Grid = () => {
           description={item.description}
         ></GridItem>
       ))}
-      ;
     </GridContainer>
   );
 };

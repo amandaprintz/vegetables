@@ -12,7 +12,9 @@ const ButtonContainer = styled.div`
 const Btn = styled.button`
   padding: 8px 16px;
   background-color: #f5d37d;
+  font-family: "Rubik-Medium";
   color: #000000;
+  font-size: 16px;
   font-weight: bold;
   border: none;
   cursor: pointer;
