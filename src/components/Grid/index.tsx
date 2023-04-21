@@ -9,7 +9,7 @@ const GridContainer = styled.div`
   grid-template-columns: 1fr;
   object-fit: cover;
 
-  @media (min-width: 820px) {
+  @media (min-width: 768px) {
     background-color: #ffffff;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
