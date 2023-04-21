@@ -1,4 +1,4 @@
-# Kim, Chill it's only salad 
+# Kim, chill it's only salad 
 <img src="https://media.giphy.com/media/x0CGDWj2fJhpFJpz4W/giphy.gif" width=100%>
 
 Just listing a lil veggie collage. 
