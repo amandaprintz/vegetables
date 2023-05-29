@@ -16,12 +16,16 @@ const Item = styled.div`
   grid-column: span 1;
   width: 100%;
   position: relative;
+  display: grid;
 
   &.large {
     grid-column: span 2;
   }
   img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-area: 1/1/1/1;
   }
 `;
 
@@ -32,6 +36,14 @@ const LikeButton = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
+`;
+
+const Info = styled.div`
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-area: 1/1/1/1;
+  align-items: end;
+  padding: 15px;
 `;
 
 const GridItem: React.FC<GridItemProps> = ({
@@ -78,8 +90,10 @@ const GridItem: React.FC<GridItemProps> = ({
           </svg>
         )}
       </LikeButton>
-      <h3>{name}</h3>
-      <p>{description}</p>
+      <Info>
+        <h3>{name}</h3>
+        <p>{description}</p>
+      </Info>
     </Item>
   );
 };
