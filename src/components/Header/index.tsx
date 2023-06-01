@@ -27,7 +27,7 @@ const Header = () => {
     <HeaderContainer>
       <h1>My favorite veggies</h1>
       <ButtonContainer>
-        <Button></Button>
+        <Button />
       </ButtonContainer>
     </HeaderContainer>
   );
