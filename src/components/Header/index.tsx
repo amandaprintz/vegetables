@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import logo from "../../assets/images/banner.svg";
-import Button from "../Button";
+import NavigationButtons from "../NavigationButtons";
 
 const HeaderContainer = styled.div`
   background-color: #142610;
@@ -27,7 +27,7 @@ const Header = () => {
     <HeaderContainer>
       <h1>My favorite veggies</h1>
       <ButtonContainer>
-        <Button />
+        <NavigationButtons />
       </ButtonContainer>
     </HeaderContainer>
   );
